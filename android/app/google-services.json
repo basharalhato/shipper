@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "500842626317",
+    "project_id": "deliverzler-46479",
+    "storage_bucket": "deliverzler-46479.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500842626317:android:757806e07e16e78ba68444",
+        "android_client_info": {
+          "package_name": "dev.bhato.shipper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500842626317-6ocp6aj94q30p01vsi65pjkufhrq73kg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAETuNUBFboBSBFyCY0Lsc9BDFGFR5lSGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500842626317-6ocp6aj94q30p01vsi65pjkufhrq73kg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "500842626317-3c7pr5sis53ba1csmcai6rv5ebjkbabv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appzler.deliverzler2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500842626317:android:05753da2643f5dd7a68444",
+        "android_client_info": {
+          "package_name": "dev.bhato.shipper.shipper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500842626317-6ocp6aj94q30p01vsi65pjkufhrq73kg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAETuNUBFboBSBFyCY0Lsc9BDFGFR5lSGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500842626317-6ocp6aj94q30p01vsi65pjkufhrq73kg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "500842626317-3c7pr5sis53ba1csmcai6rv5ebjkbabv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appzler.deliverzler2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
