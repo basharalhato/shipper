@@ -29,7 +29,7 @@ dependencies:
 
   #Location
   location: ^4.3.0
-  geolocator: ^8.2.0
+  geolocator: ^9.0.2
   google_maps_flutter: ^2.1.1
   flutter_polyline_points: ^1.0.0
 

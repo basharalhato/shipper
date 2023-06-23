@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:shipper/core/presentation/helpers/localization_helper.dart';
 import 'package:shipper/core/presentation/utils/dialogs.dart';
 import 'package:shipper/core/presentation/utils/toasts.dart';
@@ -5,7 +6,6 @@ import 'package:shipper/features/home/domain/entities/order.dart';
 import 'package:shipper/features/home/presentation/components/dialogs/cancel_order_dialog.dart';
 import 'package:shipper/features/home/presentation/components/dialogs/confirm_choice_dialog.dart';
 import 'package:shipper/features/home/presentation/components/dialogs/order_details_dialog.dart';
-import 'package:flutter/material.dart';
 
 abstract class OrderDialogHelper {
   static void showOrderDetailsDialog(
@@ -34,8 +34,6 @@ abstract class OrderDialogHelper {
     required String deliveryId,
     required String? orderDeliveryId,
   }) {
-    print('meee: $deliveryId');
-    print('meee: $orderDeliveryId');
     if (deliveryId == orderDeliveryId) {
       return true;
     } else {

@@ -1,17 +1,17 @@
 import 'dart:developer';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:shipper/core/core_features/locale/presentation/providers/app_locale_provider.dart';
 import 'package:shipper/core/core_features/theme/presentation/providers/app_theme_provider.dart';
 import 'package:shipper/core/presentation/services/fcm_service/fcm_provider.dart';
 import 'package:shipper/core/presentation/services/local_notfication_service/flutter_local_notifications_provider.dart';
-import 'package:shipper/firebase_options.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/foundation.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter/material.dart';
 import 'package:shipper/core/presentation/styles/app_images.dart';
-import 'package:intl/date_symbol_data_local.dart';
+import 'package:shipper/firebase_options.dart';
 
 final servicesInitializerProvider = Provider<ServicesInitializer>((ref) {
   return ServicesInitializer(ref);
@@ -41,6 +41,7 @@ class ServicesInitializer {
 
   _initFirebase() async {
     await Firebase.initializeApp(
+      name: 'dev',
       options: DefaultFirebaseOptions.currentPlatform,
     );
     // Set the background messaging handler early on, as a named top-level function

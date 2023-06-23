@@ -6,8 +6,8 @@ admin.initializeApp();
 const fcm = admin.messaging();
 
 exports.senddevices = functions.firestore
-  .document("orders/{id}")
-  .onUpdate((change, context) => {
+    .document("orders/{id}")
+    .onUpdate((change, context) => {
     const data = change.after.data();
     const previousData = change.before.data();
 
@@ -16,12 +16,14 @@ exports.senddevices = functions.firestore
     const deliveryStatus = data.deliveryStatus;
     const previousDeliveryStatus = previousData.deliveryStatus;
 
-    if(pickupOption=="delivery" && deliveryStatus=="upcoming" && previousDeliveryStatus=="pending"){
+    if(pickupOption=="delivery" && deliveryStatus=="upcoming" &&
+     previousDeliveryStatus=="pending") {
         const userName = data.userName;
         const message = {
               notification: {
                 title: "New Order!",
-                body: "New Delivery Order from \"" + userName + "\" has been added.",
+                body: "New Delivery Order from \""
+                + userName + "\" has been added.",
               },
               data: {"initialRoute": "home"},
             };
