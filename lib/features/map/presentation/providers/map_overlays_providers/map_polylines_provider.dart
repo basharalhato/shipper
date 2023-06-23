@@ -1,9 +1,9 @@
-import 'package:shipper/features/map/domain/entities/place_directions.dart';
-import 'package:shipper/features/map/presentation/helpers/map_coordinates_helper.dart';
-import 'package:shipper/features/map/presentation/providers/target_location_providers/target_location_directions_provider.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:shipper/features/map/domain/entities/place_directions.dart';
+import 'package:shipper/features/map/presentation/helpers/map_coordinates_helper.dart';
+import 'package:shipper/features/map/presentation/providers/target_location_providers/target_location_directions_provider.dart';
 
 final mapPolylinesProvider =
     NotifierProvider.autoDispose<MapPolylinesNotifier, Set<Polyline>>(
@@ -34,8 +34,8 @@ class MapPolylinesNotifier extends AutoDisposeNotifier<Set<Polyline>> {
     );
 
     final Set<Polyline> mapPolylines = Set.from(state);
-    //If mapPolylines already has polyline with same id,
-    //remove it first to avoid adding duplicate polylines and replace it instead.
+
+    /// If mapPolylines already has polyline with same id, remove it first to avoid adding duplicate polylines and replace it instead.
     mapPolylines.removeWhere((p) => p.polylineId == p.polylineId);
     mapPolylines.add(polyline);
 

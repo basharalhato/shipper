@@ -1,24 +1,24 @@
-import 'package:shipper/auth/presentation/providers/sign_out_provider.dart';
-import 'package:shipper/core/data/error/app_exception.dart';
-import 'package:shipper/core/presentation/extensions/app_error_extension.dart';
-import 'package:shipper/core/presentation/routing/navigation_service.dart';
-import 'package:shipper/core/presentation/styles/sizes.dart';
-import 'package:shipper/core/presentation/utils/toasts.dart';
-import 'package:shipper/core/presentation/utils/dialogs.dart';
-import 'package:shipper/core/presentation/widgets/platform_widgets/platform_tab_scaffold.dart';
-import 'package:shipper/core/presentation/services/connection_stream_service.dart';
-import 'package:shipper/features/home_base/presentation/components/bottom_nav_bar_component.dart';
-import 'package:shipper/features/home_base/presentation/components/tab_appbar_component.dart';
-import 'package:shipper/features/home_base/presentation/screens/tab_navigator_screen.dart';
-import 'package:shipper/features/home_base/presentation/utils/tab_item.dart';
-import 'package:shipper/features/home_base/presentation/providers/tabs_providers.dart';
-import 'package:shipper/features/notifications/domain/entities/app_notification.dart';
-import 'package:shipper/features/notifications/presentation/providers/fcm_remote_message_providers.dart';
-import 'package:shipper/features/notifications/presentation/providers/tapped_notification_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:shipper/auth/presentation/providers/sign_out_provider.dart';
+import 'package:shipper/core/data/error/app_exception.dart';
+import 'package:shipper/core/presentation/extensions/app_error_extension.dart';
+import 'package:shipper/core/presentation/routing/navigation_service.dart';
+import 'package:shipper/core/presentation/services/connection_stream_service.dart';
+import 'package:shipper/core/presentation/styles/sizes.dart';
+import 'package:shipper/core/presentation/utils/dialogs.dart';
+import 'package:shipper/core/presentation/utils/toasts.dart';
+import 'package:shipper/core/presentation/widgets/platform_widgets/platform_tab_scaffold.dart';
+import 'package:shipper/features/home_base/presentation/components/bottom_nav_bar_component.dart';
+import 'package:shipper/features/home_base/presentation/components/tab_appbar_component.dart';
+import 'package:shipper/features/home_base/presentation/providers/tabs_providers.dart';
+import 'package:shipper/features/home_base/presentation/screens/tab_navigator_screen.dart';
+import 'package:shipper/features/home_base/presentation/utils/tab_item.dart';
+import 'package:shipper/features/notifications/domain/entities/app_notification.dart';
+import 'package:shipper/features/notifications/presentation/providers/fcm_remote_message_providers.dart';
+import 'package:shipper/features/notifications/presentation/providers/tapped_notification_provider.dart';
 
 class HomeBaseScreen extends HookConsumerWidget {
   const HomeBaseScreen({Key? key}) : super(key: key);
@@ -103,7 +103,6 @@ class HomeBaseScreen extends HookConsumerWidget {
         return true;
       },
       child: AnnotatedRegion(
-        //TODO: This is temporary until https://github.com/flutter/flutter/pull/104827
         //is on stable channel then remove this AnnotatedRegion
         value: Theme.of(context).appBarTheme.systemOverlayStyle!,
         child: PlatformTabScaffold(

@@ -1,18 +1,18 @@
-import 'package:shipper/core/core_features/locale/presentation/providers/current_app_locale_provider.dart';
-import 'package:shipper/core/core_features/theme/presentation/utils/app_theme.dart';
-import 'package:shipper/core/core_features/theme/presentation/providers/current_app_theme_provider.dart';
-import 'package:shipper/core/data/local/local_storage_caller/shared_pref_local_storage_caller.dart';
-import 'package:shipper/core/presentation/services/locator_service.dart';
-import 'package:shipper/core/presentation/services/services_initializer.dart';
-import 'package:shipper/core/presentation/providers/provider_observers.dart';
-import 'package:shipper/core/presentation/routing/app_router.dart';
-import 'package:shipper/core/presentation/widgets/platform_widgets/platform_app.dart';
-import 'package:shipper/l10n/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:shipper/core/presentation/routing/route_paths.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shipper/core/core_features/locale/presentation/providers/current_app_locale_provider.dart';
+import 'package:shipper/core/core_features/theme/presentation/providers/current_app_theme_provider.dart';
+import 'package:shipper/core/core_features/theme/presentation/utils/app_theme.dart';
+import 'package:shipper/core/data/local/local_storage_caller/shared_pref_local_storage_caller.dart';
+import 'package:shipper/core/presentation/providers/provider_observers.dart';
+import 'package:shipper/core/presentation/routing/app_router.dart';
+import 'package:shipper/core/presentation/routing/route_paths.dart';
+import 'package:shipper/core/presentation/services/locator_service.dart';
+import 'package:shipper/core/presentation/services/services_initializer.dart';
+import 'package:shipper/core/presentation/widgets/platform_widgets/platform_app.dart';
+import 'package:shipper/l10n/l10n.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +20,6 @@ void main() async {
   await setupLocator();
 
   final prefs = await SharedPreferences.getInstance();
-  //This let us access providers before runApp
   final ProviderContainer container = ProviderContainer(
     overrides: [sharedPrefsProvider.overrideWithValue(prefs)],
     observers: [LogProviderObserver()],

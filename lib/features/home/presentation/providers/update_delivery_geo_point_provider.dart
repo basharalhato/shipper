@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shipper/features/home/domain/use_cases/update_delivery_geo_point_uc.dart';
 import 'package:shipper/features/home/presentation/providers/location_stream_provider.dart';
 import 'package:shipper/features/home/presentation/providers/my_delivering_orders_provider.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final updateDeliveryGeoPointStatusProvider =
     FutureProvider.autoDispose<void>((ref) async {
@@ -19,7 +19,8 @@ final updateDeliveryGeoPointStatusProvider =
     );
     futures.add(ref.watch(updateDeliveryGeoPointProvider(params).future));
   }
-  //Run all calls in parallel to ensure all orders get updated in case the location is changing fast.
+
+  /// Run all calls in parallel to ensure all orders get updated in case the location is changing fast.
   await Future.wait(futures);
 });
 
